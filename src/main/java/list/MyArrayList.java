@@ -67,7 +67,9 @@ public class MyArrayList<String> implements List<String> {
     @Override
     public boolean addAll(int index, Collection<? extends String> collection) {
         //TODO: 구현해보세요.
+
         throw new UnsupportedOperationException();
+
     }
 
     @Override
@@ -120,6 +122,26 @@ public class MyArrayList<String> implements List<String> {
     }
 
     @Override
+    public String remove(int index) {
+        String removed;
+
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        removed = array[index];
+
+
+
+        for (int i = index + 1; i <= size-1 ; i++ ) {
+            array[i-1] = array[i];
+        }
+        size--;
+        array[--index] = null;
+
+        return removed;
+    }
+
+    @Override
     public int lastIndexOf(Object o) {
         return 0;
     }
@@ -169,8 +191,5 @@ public class MyArrayList<String> implements List<String> {
     public boolean remove(Object o) {
         return false;
     }
-
-    @Override
-    public String remove(int index) { return null; }
 
 }

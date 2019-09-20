@@ -40,6 +40,23 @@ public class MyArrayListTest {
     }
 
     @Test
+    public void testAddAllCollectionIndex(){
+        List<String> myArrayList = new ArrayList();
+        myArrayList.add("JOB");
+        myArrayList.add("JOHN");
+
+        List<String> list = new ArrayList<>();
+        list.add("Hi");
+        list.add("BYE");
+        list.add("GOOD");
+
+        myArrayList.addAll(2,list);
+
+        assertThat(myArrayList.size()).isEqualTo(5);
+
+    }
+
+    @Test
     public void testClear() {
         List<String> myArrayList = new MyArrayList();
         myArrayList.add("Hello");
@@ -81,5 +98,14 @@ public class MyArrayListTest {
         assertThat(myArrayList.indexOf("Hello")).isEqualTo(0);
         assertThat(myArrayList.indexOf("World")).isEqualTo(1);
         assertThat(myArrayList.indexOf("Java 12")).isEqualTo(2);
+    }
+
+    @Test
+    public void removeList(){
+        List<String> myArrayList = new MyArrayList<>();
+        myArrayList.add("Hello");
+        myArrayList.add("World");
+        myArrayList.remove(1);
+        assertThat(myArrayList.size()).isEqualTo(1);
     }
 }
