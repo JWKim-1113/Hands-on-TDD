@@ -8,5 +8,5 @@
 ## TODO
 
 - [X] add
-- [ ] remove
+- [X] remove
 - [ ] iterator
