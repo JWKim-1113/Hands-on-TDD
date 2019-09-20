@@ -7,5 +7,6 @@
 
 ## TODO
 
+- [ ] add
 - [ ] remove
 - [ ] iterator
